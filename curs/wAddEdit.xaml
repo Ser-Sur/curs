@@ -1,0 +1,45 @@
+﻿<Window x:Class="curs.wAddEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:curs"
+        mc:Ignorable="d"
+        Title="wAddEdit" Height="350" Width="400" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <GroupBox Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"/>
+        <GroupBox Grid.Column="0" Grid.Row="3" Grid.RowSpan="3"/>
+        <GroupBox Grid.Column="1" Grid.Row="0" Grid.RowSpan="4"/>
+        <GroupBox Grid.Column="1" Grid.Row="4" Grid.RowSpan="2"/>
+        <GroupBox Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2"/>
+        <Label Grid.Row="0" Grid.Column="0" Content="Завтрак" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Grid.Row="0" Grid.Column="1" Content="Обед" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Grid.Row="3" Grid.Column="0" Content="Полдник" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Grid.Row="4" Grid.Column="1" Content="Дата" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <ComboBox x:Name="cbBreakfastFirst" Grid.Column="0" Grid.Row="1" Margin="20,5" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <ComboBox x:Name="cbBreakfastDrink" Grid.Column="0" Grid.Row="2" Margin="20,5" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <ComboBox x:Name="cbLunchDessert" Grid.Column="0" Grid.Row="4" Margin="20,5" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <ComboBox x:Name="cbLunchDrink" Grid.Column="0" Grid.Row="5" Margin="20,5" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <ComboBox x:Name="cbMealFirst" Grid.Column="1" Grid.Row="1" Margin="20,5" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <ComboBox x:Name="cbMealSecond" Grid.Column="1" Grid.Row="2" Margin="20,5" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <ComboBox x:Name="cbMealDrink" Grid.Column="1" Grid.Row="3" Margin="20,5" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <DatePicker x:Name="dpDate" Grid.Column="1" Grid.Row="5" Margin="20,-5,20,5" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <StackPanel Grid.Row="6" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <Button x:Name="btnAddEdit" Width="160" Margin="20,10,20,5" IsDefault="True" Content="Добавить" FontSize="18" Click="AddEdit_Click"/>
+            <Button x:Name="btnCansel" Width="160" Margin="20,10,20,5" IsCancel="True" Content="Отмена" FontSize="18" Click="Cansel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
