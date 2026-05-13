@@ -17,11 +17,11 @@ using System.Windows.Shapes;
 namespace curs
 {
     /// <summary>
-    /// Логика взаимодействия для wFindUnusedDishes.xaml
+    /// Логика взаимодействия для wViewCategoryPopularity.xaml
     /// </summary>
-    public partial class wViewUnusedDishes : Window
+    public partial class wViewCategoryPopularity : Window
     {
-        public wViewUnusedDishes()
+        public wViewCategoryPopularity()
         {
             InitializeComponent();
         }
@@ -30,7 +30,7 @@ namespace curs
         {
             using (KindergartenMenuContext _db = new())
             {
-                listView.ItemsSource = _db.VFindUnusedDishes.ToList();
+                listView.ItemsSource = _db.VCategoryPopularities.ToList();
                 listView.Focus();
             }
         }

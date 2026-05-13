@@ -16,8 +16,8 @@ namespace curs
 
     public static class LinkTimeforTFunc
     {
-        public static DateTime? timeStart;
-        public static DateTime? timeEnd;
+        public static DateOnly? dateStart;
+        public static DateOnly? dateEnd;
         public static bool isForth = false; // Дальше?
     }
 }

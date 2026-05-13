@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using curs.ModelsDB_DTO;
 using Microsoft.EntityFrameworkCore;
 
 namespace curs.ModelsDB;
@@ -38,6 +39,8 @@ public partial class KindergartenMenuContext : DbContext
     public virtual DbSet<VOrphanedIngredient> VOrphanedIngredients { get; set; }
 
     public virtual DbSet<VwDishServingDate> VwDishServingDates { get; set; }
+
+    public virtual DbSet<FnCheckMenuCompleteness> FnCheckMenuCompletenesses { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
@@ -253,7 +256,13 @@ public partial class KindergartenMenuContext : DbContext
         });
 
         OnModelCreatingPartial(modelBuilder);
+
+        base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<FnCheckMenuCompleteness>().HasNoKey();
+        modelBuilder.HasDbFunction(typeof(KindergartenMenuContext).GetMethod(nameof(GetCheckMenuCompleteness), new[] { typeof(DateOnly) })).HasName("fn_CheckMenuCompleteness").HasSchema("dbo");
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+    public IQueryable<FnCheckMenuCompleteness> GetCheckMenuCompleteness(DateOnly checkDate) => FromExpression(() => GetCheckMenuCompleteness(checkDate));
 }

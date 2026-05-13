@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using curs.ModelsDB;
+﻿using curs.ModelsDB;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,11 +16,11 @@ using System.Windows.Shapes;
 namespace curs
 {
     /// <summary>
-    /// Логика взаимодействия для wFindUnusedDishes.xaml
+    /// Логика взаимодействия для wViewCategoryRotationCompliance.xaml
     /// </summary>
-    public partial class wViewUnusedDishes : Window
+    public partial class wViewCategoryRotationCompliance : Window
     {
-        public wViewUnusedDishes()
+        public wViewCategoryRotationCompliance()
         {
             InitializeComponent();
         }
@@ -30,7 +29,7 @@ namespace curs
         {
             using (KindergartenMenuContext _db = new())
             {
-                listView.ItemsSource = _db.VFindUnusedDishes.ToList();
+                listView.ItemsSource = _db.VCategoryRotationCompliances.ToList();
                 listView.Focus();
             }
         }

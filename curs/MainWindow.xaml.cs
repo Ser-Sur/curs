@@ -92,7 +92,16 @@ namespace curs
         private void CheckMenuCompleteness_Click(object sender, RoutedEventArgs e)
         {
             // №7
-
+            OpenSelectTimeGapWindow();
+            if (LinkTimeforTFunc.isForth)
+            {
+                wFnCheckMenuCompleteness fcmc = new();
+                fcmc.Owner = this;
+                fcmc.ShowDialog();
+            }
+            LinkTimeforTFunc.dateStart = null;
+            LinkTimeforTFunc.dateEnd = null;
+            LinkTimeforTFunc.isForth = false;
         }
 
         private void GetvDMSByDateRange_Click(object sender, RoutedEventArgs e)
@@ -112,6 +121,11 @@ namespace curs
             else if (countClickOnSortByMealType == 1)
             {
                 //По убыванию
+                countClickOnSortByMealType = 2;
+            }
+            else
+            {
+                //По умолчанию
                 countClickOnSortByMealType = 0;
             }
         }
@@ -185,19 +199,25 @@ namespace curs
         private void CategoryPopularity_Click(object sender, RoutedEventArgs e)
         {
             // №1
-
+            wViewCategoryPopularity cp = new();
+            cp.Owner = this;
+            cp.ShowDialog();
         }
 
         private void CategoryRotationCompliance_Click(object sender, RoutedEventArgs e)
         {
             // №2
-
+            wViewCategoryRotationCompliance crc = new();
+            crc.Owner = this;
+            crc.ShowDialog();
         }
 
         private void DishServingDates_Click(object sender, RoutedEventArgs e)
         {
             // №6
-
+            wViewDishServingDate dsd = new();
+            dsd.Owner = this;
+            dsd.ShowDialog();
         }
 
         private void GetConsecutiveServingDays_Click(object sender, RoutedEventArgs e)

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:curs"
         mc:Ignorable="d"
-        Title="wSelectTimeGap" Height="200" Width="300">
+        Title="wSelectTimeGap" Height="230" Width="300">
     <StackPanel Orientation="Vertical">
         <Label Content="Начало:" FontSize="18"/>
         <DatePicker x:Name="dpDateStart" Margin="20,0" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>

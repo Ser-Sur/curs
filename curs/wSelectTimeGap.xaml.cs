@@ -27,16 +27,16 @@ namespace curs
 
         private void Forth_Click(object sender, RoutedEventArgs e)
         {
-            LinkTimeforTFunc.timeStart = dpDateStart.SelectedDate;
-            LinkTimeforTFunc.timeEnd = dpDateEnd.SelectedDate;
+            if (dpDateStart.SelectedDate is not null) LinkTimeforTFunc.dateStart = DateOnly.FromDateTime((DateTime)dpDateStart.SelectedDate);
+            if (dpDateEnd.SelectedDate is not null) LinkTimeforTFunc.dateEnd = DateOnly.FromDateTime((DateTime)dpDateEnd.SelectedDate);
             LinkTimeforTFunc.isForth = true;
             this.Close();
         }
 
         private void Cansel_Click(object sender, RoutedEventArgs e)
         {
-            LinkTimeforTFunc.timeStart = null;
-            LinkTimeforTFunc.timeEnd = null;
+            LinkTimeforTFunc.dateStart = null;
+            LinkTimeforTFunc.dateEnd = null;
             LinkTimeforTFunc.isForth = false;
             this.Close();
         }
